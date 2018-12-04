@@ -78,14 +78,14 @@ export default class Pedido extends Component {
 
 		$.ajax({
 			type: 'POST',
-			url: "http://localhost:8080/compra/lanche",
+			url: "http://localhost:8080/pedido/lanche",
 			crossDomain: true,
 			data: JSON.stringify(lanche),
 			contentType: "application/json; charset=utf-8",
 			success: function (resposta) {
 				
 				$.ajax({
-					url: "http://localhost:8080/compra/lanches",
+					url: "http://localhost:8080/pedido/lanches",
 					dataType: 'json',
 					success: function (resposta) {
 						this.setState({ lista: resposta.lanches });
